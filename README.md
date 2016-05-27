@@ -4,7 +4,7 @@ ionic plugin detect application</br>
 #Usage<br>
 
 ####terminal:
- * cordova plugin add ios (sudo)</br>
+ * cordova plugin add https://github.com/wfxiaolong/com-plugin-dmdevice.git (sudo)</br>
 
 ####js:
  * DMDevice.checkApp("wechat", function(){}, function(){});</br>
