@@ -28,13 +28,13 @@
 
 - (void)checkApp:(CDVInvokedUrlCommand*)command {
     NSString *type = [command.arguments objectAtIndex:0];
-    if(type == "wechat") {
-        type = @"weixin://dl/games";
+    if([type isEqualToString:@"wechat"]) {
+        type = @"weixin://";
     }
-
+    
     CDVPluginResult* pluginResult = nil;
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:type]]) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"应用已安装"];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
